@@ -51,11 +51,47 @@ nav{background: #80BCA3;margin:0; padding: 0 0.5em; position:relative;}
 #contenido{
 	padding: 1em;
 }
-#contenido .item{background: white; border-bottom: 3px solid #22BCE0; overflow: hidden;}
+#contenido .item{
+	background: white; 
+	border-bottom: 3px solid #22BCE0; 
+	position: relative;
+	min-height: 128px; /* Para que respete la medida habiendole quitado el overflow: hidden*/
+	margin-bottom: 3em;
+}
 #contenido .item .imagen_item{float: left; margin: 0 1em 0 0;}
 #contenido .item .imagen_item img{width:  96px; }
 
-#contenido .item .titulo_item{font-size: 1.2em;font-style: italic;}
+#contenido .item .titulo_item{font-size: 1.2em;font-style: italic;padding: 1em 1em 0 0;}
 	#contenido .item .titulo_item a{color: #444; text-decoration: none;}
 
-#contenido .item .autor_item{}
+#contenido .item .autor_item{color: #AAA;}
+#contenido .item .datos_item{text-align: right; margin: 1em 1em 0 0;}
+#contenido .item .datos_item .tag_item{
+	background: #F4502A;
+	border-radius: 0.5em; 
+	display: inline-block;
+	color: white; 
+	padding: 0.2em 0.5em;
+	float: left;
+}
+#contenido .item .datos_item .fecha_item{color: #444;}
+#contenido .item .votacion{
+	background: white;
+	position: absolute;
+	top: 100%;
+	left: 5%;
+	width: 90%;
+	margin-top: 3px;
+	padding: 0.2em 0.5em;
+	border-radius: 0 0 0.5em 0.5em;
+}
+
+#contenido .item .votacion .comentarios_item,
+#contenido .item .votacion .guardar_item{
+	float: right;
+}
+
+
+
+
+
