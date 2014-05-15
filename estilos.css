@@ -1,7 +1,87 @@
-/* Estilos */
+/*
+ * Estilos de la clase 2 de DISEÑO WEB de Mejorando.la
+ */
+/* ==========================================================================
+   Fuentes 
+   ========================================================================== */
+/*   @font-face {
+    font-family: 'open_sansregular';
+    src: url('OpenSans-Regular-webfont.eot');
+    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Regular-webfont.woff') format('woff'),
+         url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+	}
+	@font-face {
+    font-family: 'open_sansbold';
+    src: url('OpenSans-Bold-webfont.eot');
+    src: url('OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Bold-webfont.woff') format('woff'),
+         url('OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+	}*/
+/* ==========================================================================
+   Fuentes de iconos
+   ========================================================================== */
+   @font-face {
+	font-family: 'icomoon';
+	src:url('fuentes/icomoon.eot?-noiqfl');
+	src:url('fuentes/icomoon.eot?#iefix-noiqfl') format('embedded-opentype'),
+		url('fuentes/icomoon.woff?-noiqfl') format('woff'),
+		url('fuentes/icomoon.ttf?-noiqfl') format('truetype'),
+		url('fuentes/icomoon.svg?-noiqfl#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	}
+
+	[class^="icon-"], [class*=" icon-"] {
+		font-family: 'icomoon';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.icon-pencil:before {
+		content: "\e600";
+		margin-right: 0.8em;
+	}
+	.icon-up:before {
+		content: "\e602";
+	}
+	.icon-down:before {
+		content: "\e603";
+		color: #DD4F24;
+	}
+	.icon-star:before {
+		content: "\e601";
+		color: #FFBE2C;
+		margin-right: 0.4em;
+		position: relative;
+		top: 0.1em;
+	}
+
+
+/* ==========================================================================
+   Estilos generales
+   ========================================================================== */
+
 body{
 	background: #EEEEEE;
-	font-family: Arial;
+	/*font-family: Arial;*/
+	font-family: 'Open Sans';
 	font-size: 16px;
 }
 
@@ -32,8 +112,8 @@ header{
 	header #avatar img{width: 55px; border-radius: 50%;}
 	header figure{float:left;}
 
-a{color: #22BCE0;}
-nav{background: #80BCA3;margin:0; padding: 0 0.5em; position:relative;}
+a{color: #22BCE0; }
+nav{background: #80BCA3;margin:0; padding: 0 7em 0 0.5em; position:relative;}
 	nav ul{list-style: none; margin:0;padding: 0;}
 		nav ul li{display: inline-block; margin: 0 1em 0 0;}
 			nav ul li a{color: white;display: block; padding: 0.5em 0;}
@@ -74,7 +154,8 @@ nav{background: #80BCA3;margin:0; padding: 0 0.5em; position:relative;}
 	padding: 0.2em 0.5em;
 	float: left;
 }
-#contenido .item .datos_item .fecha_item{color: #444;}
+#contenido .item .datos_item a{text-decoration: none;}
+#contenido .item .datos_item .fecha_item{color: #AAA;}
 #contenido .item .votacion{
 	background: white;
 	position: absolute;
@@ -90,8 +171,36 @@ nav{background: #80BCA3;margin:0; padding: 0 0.5em; position:relative;}
 #contenido .item .votacion .guardar_item{
 	float: right;
 }
+#contenido .item .votacion a{text-decoration: none}
 
+/* ==========================================================================
+   Responsive Web Design @media-query
+   ========================================================================== */
+/*@media print{
+	body{
+		font-size: 50px;
+	}
+}*/
 
+@media screen and (min-width: 800px){
+	body{
+		background: black;
+	}	
+}
 
+@media screen and (max-width: 799px){
+
+	#contenido{
+		overflow: hidden;
+	}	
+	#contenido .item{
+		width: 49%;
+		float: left;
+	}
+	/*Solo aplica a los items impares*/
+	#contenido .item:nth-child(odd){
+		margin-right: 2%;
+	}
+}
 
 
