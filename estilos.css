@@ -132,17 +132,34 @@ a{color: #22BCE0; }
 nav{background: #80BCA3;margin:0; padding: 0 7em 0 0.5em; position:relative;}
 	nav ul{list-style: none; margin:0;padding: 0;}
 		nav ul li{display: inline-block; margin: 0 1em 0 0;}
-			nav ul li a{color: white;display: block; padding: 0.5em 0;}
+			nav ul li a{
+				color: white;
+				display: block; 
+				padding: 0.5em;
+				text-decoration: none;
+				-webkit-transition: 0.3s;
+			}
+			nav ul li a:hover{background: #343854;}
 		nav ul #publicar_nav{position: absolute; top:-0.3em; right: 0;}
 			nav ul #publicar_nav a{
 				background: #22BCE0;
-				padding: 0.8em 0.5em;
+				padding: 0.8em 0.5em 0.8em 2.5em;
 				border-radius: 5px; 
 				text-decoration: none;
 				font-style: italic;
 				text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
 				box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
 			}
+			nav ul #publicar_nav a:before{
+				position: absolute;
+				left: 0.5em;
+				top: 0.8em;
+			}
+			nav ul #publicar_nav a:hover:before{
+				/*-webkit-transform: scale(1.2);*/
+				font-size: 18px;
+			}
+
 
 aside{display: none;}
 
