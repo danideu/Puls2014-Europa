@@ -1,5 +1,5 @@
 var $form = $('#formulario'),
-	$titulo = $('#titulo'),
+	$titulo = $('#titulo'),	
 	$url = $('#link'),
 	$primerPost = $('.item').first(),
 	$lista = $('#contenido');
@@ -7,10 +7,10 @@ var $form = $('#formulario'),
 
 function mostrarOcultarFormulario(){
 	$form.slideToggle();
-	return false;
+	$lista.slideToggle();
 }
 
-function validarUrl{
+function validarUrl(){
 	var txt = $url.val();
 	var re = /(http(s)?:\\)?([\w-]+\.)+[\w-]+[.com|.in|.org]+(\[\?%&=]*)?/
 	if (re.test(txt)) {
@@ -18,10 +18,13 @@ function validarUrl{
 	}
 }
 //Funcion que agrega un nuevo post en primer lugar dentro del contenido.
-function agregarPost(){
+function agregarPost(e){
+	//Para evitar que se envíe el formulario. Es decir, 
+	//quita la función por defecto,en este caso el Submit.
+	e.preventDefault(); 
 	var titulo = $titulo.val(),
-		url = $url.val(),
-		clone = $primerPost.clone();
+		url    = $url.val(),
+		clone  = $primerPost.clone();
 
 		clone.find('.titulo_item a')
 			.text(titulo)
@@ -30,7 +33,8 @@ function agregarPost(){
 		clone.hide()
 
 		$lista.prepend(clone)
-		clone.slideDown()
+		mostrarOcultarFormulario();
+		clone.fadeIn()
 
 	//debugger; //Se para en el código cuando se esté ejecutando.
 }

@@ -29,6 +29,9 @@
 /* ==========================================================================
    Fuentes de iconos
    ========================================================================== */
+
+   /*@import(http://fonts.googleapis.com/css?family=Open+Sans:400,700);*/
+
    @font-face {
 	font-family: 'icomoon';
 	src:url('fuentes/icomoon.eot?-noiqfl');
