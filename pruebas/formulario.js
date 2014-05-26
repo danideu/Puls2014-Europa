@@ -26,18 +26,37 @@ function agregarPost(e){
 		url    = $url.val(),
 		clone  = $primerPost.clone();
 
-		clone.find('.titulo_item a')
-			.text(titulo)
-			.attr('href', url)
+	clone.find('.titulo_item a')
+		 .text(titulo)
+		 .attr('href', url)
 
 		clone.hide()
 
 		$lista.prepend(clone)
 		mostrarOcultarFormulario();
-		clone.fadeIn()
+		clone.fadeIn();
+		$titulo.val("");
+		$url.val("");
 
 	//debugger; //Se para en el código cuando se esté ejecutando.
 }
+
+function grabarInformacion(e){
+	e.preventDefault(); 
+
+	var titulo = $titulo.val(),
+		url    = $url.val(),
+		ls     = localStorage,
+		ss	   = sessionStorage;
+
+	ls.secItem('titulo', titulo);
+	ls.secItem('url', url);
+
+	ss.secItem('titulo', titulo);
+	ss.secItem('url', url);
+}
+
 $('#publicar_nav a').click(mostrarOcultarFormulario);
-$('#formulario').on('submit', agregarPost);
+//$('#formulario').on('submit', agregarPost);
+$('#formulario').on('submit', grabarInformacion);
 	
