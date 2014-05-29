@@ -44,6 +44,7 @@
 	</form>
 
 	<aside> <!-- Etiqueta no tan relevante semánticamente -->
+		<div id="geo"></div>
 		<video width="320" height="240" controls>
 			<source src="beyonce.mp4" type="video/mp4" /><!--Para IE -->
 			<source src="prueba.ogg" type="video/ogg" />
@@ -195,6 +196,35 @@
 	</footer>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="pruebas/formulario.js"></script>
+	<script src="pruebas/ajax.js"></script>
+	<script>
+		$(function(){
+			var geo = navigator.geolocation;
+			//console.log(geo);
+			function geo_exito(position){
+				console.log(position);
+				var lat = position.coords.latitude;
+				var lon = position.coords.longitude;
+
+				var mapa = new Image();
+				mapa.src = "http://maps.googleapis.com/maps/api/staticmap?center="+lat+","+lon+"&zoom=12&size=200x200&sensor=false";
+
+				$('#geo').append(mapa);
+				obtenerGeoInformation(lat,lon);
+
+				}
+			}
+
+			function geo_error(){
+				console.log("Esto es incómodo, no se donde estas!");
+			}
+
+			geo.getCurrentPosition(geo_exito, geo_error, {
+				enableHighAccuracy: true,
+				timeout: 5000, 
+				maximumAge: 0
+			});
+		})
+	</script>
 </body>
 </html>
-
