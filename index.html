@@ -202,7 +202,7 @@
 			var geo = navigator.geolocation;
 			//console.log(geo);
 			function geo_exito(position){
-				console.log(position);
+				//console.log(position);
 				var lat = position.coords.latitude;
 				var lon = position.coords.longitude;
 
@@ -210,13 +210,14 @@
 				mapa.src = "http://maps.googleapis.com/maps/api/staticmap?center="+lat+","+lon+"&zoom=12&size=200x200&sensor=false";
 
 				$('#geo').append(mapa);
-				obtenerGeoInformation(lat,lon);
+				obtenerGeoInformacion(lat,lon);
 
-				}
+			
 			}
 
-			function geo_error(){
+			function geo_error(position){
 				console.log("Esto es incómodo, no se donde estas!");
+
 			}
 
 			geo.getCurrentPosition(geo_exito, geo_error, {
@@ -228,3 +229,4 @@
 	</script>
 </body>
 </html>
+

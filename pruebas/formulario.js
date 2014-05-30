@@ -54,23 +54,17 @@ function agregarPost(e){
 	//Para evitar que se envíe el formulario. Es decir, 
 	//quita la función por defecto,en este caso el Submit.
 	e.preventDefault(); 
-	var titulo = $titulo.val(), 		//Valor del campo titulo del formulario
-		url    = $url.val(), 			//Valor del campo titulo del formulario
-		clone  = $primerPost.clone();	//Clonamos la caja del primer post
+	var titulo = $titulo.val(),
+		url    = $url.val(),
+		clone  = $primerPost.clone();
 
-	/*Buscamo el primer elemento que coincida dentro de lo que hemos clonado
-	  y le ponemos al texto nuestra variable titulo recogida del form y el enlace
-	  de la variable url recogida del form.
-	*/
-	clone.find('.titulo_item a') 
+	clone.find('.titulo_item a')
 		 .text(titulo)
 		 .attr('href', url)
 
 		clone.hide()
 
-		//Situamos lo clonado al principio de la lista
-		//es decir al principio de $('#contenido')
-		$lista.prepend(clone) 
+		$lista.prepend(clone)
 		mostrarOcultarFormulario();
 		clone.fadeIn();
 		$titulo.val("");
